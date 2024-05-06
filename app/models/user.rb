@@ -5,6 +5,7 @@
 # password_confirmation:string virtual
 # will only interact with password and password_confirmation
 class User < ApplicationRecord
+  has_many :twitter_accounts
   has_secure_password
 
   # email address Start with one or more characters that are not "at" symbols or whitespace ([^@\s]+)
