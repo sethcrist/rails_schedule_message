@@ -6,6 +6,10 @@ class Tweet < ApplicationRecord
   validate :publish_at, presence: true
 
   after_initialize do
-    self.publish_at ||= 14.hour.form_now
+    self.publish_at ||= 14.hour.from_now
+  end
+
+  def published?
+    tweet_id?
   end
 end
